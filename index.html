@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changing Color</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        width: auto;
+        height: 40rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(90deg, black, yellow, black);
+      }
+
+      div {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 10rem;
+        margin-bottom: 20px;
+        background-color: green;
+      }
+
+      button {
+        padding: 20px 40px;
+        outline: none;
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        transition: background_color 0.9s, color 0.5s;
+      }
+
+      button:hover {
+        background-color: lightslategray;
+        color: black;
+        border: none;
+      }
+
+      h1 {
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript spancolorChanger()</h1>
+
+    <div id="colorBox"></div>
+
+    <button id="changeColorBtn">Change Color</button>
+
+    <script>
+      const colorBox = document.getElementById("colorBox");
+      let changeColorBtn = document.getElementById("changeColorBtn");
+
+      changeColorBtn.addEventListener("click", changeColor);
+
+      function changeColor() {
+        if (colorBox.style.backgroundColor === "green") {
+          colorBox.style.backgroundColor = "blue";
+        } else {
+          colorBox.style.backgroundColor = "green";
+        }
+      }
+    </script>
+  </body>
+</html>
